@@ -9,7 +9,12 @@ class UserComponet extends React.Component {
             users: []
         }
         this.crearUsuario= this.crearUsuario.bind(this);
+        this.actualizarUsuario= this.actualizarUsuario.bind(this);
 
+    }
+
+    actualizarUsuario(id){
+        this.props.history.push(`/actualizar-usuario/${id}`);
     }
 
     componentDidMount() {
@@ -42,6 +47,7 @@ class UserComponet extends React.Component {
                             <td> telefono </td>
                             <td> direccion </td>
                             <td> email </td>
+                            <td> Acciones </td>
                         </tr>
                         </thead>
                         <tbody>
@@ -58,6 +64,9 @@ class UserComponet extends React.Component {
                                         <td>{user.telefono}</td>
                                         <td>{user.direccion}</td>
                                         <td>{user.email}</td>
+                                        <td>
+                                            <button onClick={()=> this.actualizarUsuario(user.idUsuario)} className="btn btn-info" >Actualizar</button>
+                                        </td>
                                     </tr>
                             )
                         }

@@ -11,6 +11,16 @@ class UserService{
 	crearUsuario(usuario){
 		return axios.post(USERS_REST_API_URL+"/create",usuario);
 	}
+
+	getUsuarioById(usuarioId){
+		console.log("Usuario"+usuarioId);
+		return axios.get(USERS_REST_API_URL+"/usuario/"+usuarioId);
+	}
+
+	editarUsuario(usuario){
+		console.log("Usuario"+usuario);
+		return axios.put(USERS_REST_API_URL+"/update",usuario);
+	}
 }
 
 export default new UserService();
