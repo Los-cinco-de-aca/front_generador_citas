@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import UserService from "../services/UserService";
 
 class ActualizarUsuarioComponent extends Component {
+
     constructor(props){
         super(props)
         console.log("props"+this.props.match.params.id);

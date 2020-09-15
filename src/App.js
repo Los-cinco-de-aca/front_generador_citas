@@ -5,6 +5,9 @@ import {BrowserRouter as Router, Route, Switch}  from 'react-router-dom';
 import UserComponent from './components/UserComponent';
 import CrearUsuarioComponent from "./components/CrearUsuarioComponent";
 import ActualizarUsuarioComponent from "./components/ActualizarUsuarioComponent";
+import SpecialtyComponent from "./components/SpecialtyComponent";
+import CrearSpeciality from "./components/CrearSpeciality";
+import ActualizarSpeciality from "./components/ActualizarSpeciality";
 
 function App() {
   return (
@@ -16,6 +19,9 @@ function App() {
                         <Route path="/usuarios" component={UserComponent}></Route>
                         <Route path="/crear-usuario" component={CrearUsuarioComponent}></Route>
                         <Route path="/actualizar-usuario/:id" component={ActualizarUsuarioComponent}></Route>
+                        <Route path="/especialidades" component={SpecialtyComponent}></Route>
+                        <Route path="/crear-especialidad" component={CrearSpeciality}></Route>
+                        <Route path="/actualizar-especialidad/:id" component={ActualizarSpeciality}></Route>
                     </Switch>
                 </div>
         </Router>

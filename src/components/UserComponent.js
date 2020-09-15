@@ -10,11 +10,21 @@ class UserComponet extends React.Component {
         }
         this.crearUsuario= this.crearUsuario.bind(this);
         this.actualizarUsuario= this.actualizarUsuario.bind(this);
+        this.eliminarUsuario= this.eliminarUsuario.bind(this);
 
     }
 
     actualizarUsuario(id){
         this.props.history.push(`/actualizar-usuario/${id}`);
+    }
+
+    eliminarUsuario(id){
+        UserService.eliminarUsuario(id);
+        this.props.history.push(`/actualizar-usuario/${id}`);
+    }
+
+    crearUsuario(){
+        this.props.history.push('/crear-usuario');
     }
 
     componentDidMount() {
@@ -23,9 +33,7 @@ class UserComponet extends React.Component {
         });
     }
 
-    crearUsuario(){
-        this.props.history.push('/crear-usuario');
-    }
+
 
     render() {
         return (
@@ -66,6 +74,7 @@ class UserComponet extends React.Component {
                                         <td>{user.email}</td>
                                         <td>
                                             <button onClick={()=> this.actualizarUsuario(user.idUsuario)} className="btn btn-info" >Actualizar</button>
+                                            <button onClick={()=> this.eliminarUsuario(user.idUsuario)} className="btn btn-danger" >Eliminar</button>
                                         </td>
                                     </tr>
                             )
